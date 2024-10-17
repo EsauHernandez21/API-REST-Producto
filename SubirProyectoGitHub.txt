@@ -2,7 +2,22 @@ Para subir tu proyecto a GitHub después de haber inicializado el repositorio y 
 
 Abre Git Bash: Inicia Git Bash en la carpeta de tu proyecto.
 
-Inicializa el repositorio (si no lo has hecho): Si no lo has hecho aún, ejecuta:
+
+El error ocurre porque Git no tiene configurada tu identidad (nombre y correo electrónico) para los commits. 
+Para solucionarlo, necesitas configurar tu nombre y correo en Git. 
+Puedes hacerlo de forma global (para todos tus repositorios) o solo para el repositorio actual.
+
+Opción 1: Configurar de manera global
+Esto establecerá tu nombre y correo para todos los repositorios en tu máquina.
+
+Configura tu correo:
+
+
+git config --global user.email "sayoslp@gmail.com"
+Configura tu nombre:
+
+git config --global user.name "Esau Hernandez"
+
 
 
 1)Inicializa un repositorio Git 
@@ -22,6 +37,10 @@ git add .
 git commit -m "Subiendo proyecto completo"
 
 5)Subir proyecto a GitHub
+
+Aumenta el tamaño del buffer de Git: El error puede estar relacionado con el tamaño de los archivos que estás intentando subir. 
+Intenta aumentar el buffer de Git con el siguiente comando:
+git config --global http.postBuffer 524288000
 git push -u origin master
 
 
@@ -33,7 +52,16 @@ git commit -m "Subiendo proyecto completo"
 git push -u origin master
 
 
+git config --global http.postBuffer 524288000
+git clone https://github.com/EsauHernandez21/API-REST-Producto.git
+git clone --depth 1 https://github.com/EsauHernandez21/API-REST-Producto.git
 
+
+Elimina la Carpeta .github y despues ejecutar los comandos
+
+git add -A
+git commit -m "Remove GitHub Actions configuration"
+git push origin master  # o la rama que estés 
 
 Tú dijiste:
 lo hago con la sesion abierta de github??
